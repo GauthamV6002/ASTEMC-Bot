@@ -1,24 +1,21 @@
 import discord
+from discord.ext import tasks, commands
 import os
 
 import Command
 import CommandsInit
 
-client = discord.Client()
+client = commands.Bot(command_prefix = "%")
 TOKEN = os.environ['TOKEN']
+
+client.load_extension("Cogs.Random")
 
 @client.event
 async def on_ready():
   print('Login Successful!')
   await client.change_presence(status=discord.Status.online, activity = discord.Game('%help'))
 
-@client.event
-async def on_message(message):
-    if(message.content in Command.chatCommandList):
-        objIndex = Command.chatCommandList.index(message.content)
-        reply = Command.objCommandList[objIndex].getReply()
 
-        await message.channel.send(reply)
 
 client.run(TOKEN)
 
