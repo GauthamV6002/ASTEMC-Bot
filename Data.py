@@ -1,4 +1,4 @@
-factList = [
+funfactList = [
     'Yuma, Arizona gets over 4000 hours of sunshine a year, making it the sunniest place on earth. The least sunny place is the South Pole, where the sun only shines on 182 days a year.',
     'Rain contains vitamin B12. ',
     'A bolt of lightning is five times hotter than the sun. ',
@@ -37,5 +37,30 @@ factList = [
     'Did you know the smallest bone in the body is the stirrup, deep inside the ear, which is about the size of a grain of rice.',
     '1 millions Earths could fit inside the Sun!',
     'The Sun is a colossal ball of helium and hydrogen gas and is the heaviest body in our Solar System.',
-    'The immensely strong gravity of the Sun keeps objects in the solar system orbiting around it.'
+    'The immensely strong gravity of the Sun keeps objects in the solar system orbiting around it.',
+    'The Neanderthal\'s brain was bigger than yours is.'
+]
+
+randstats = [
+    'The average American generates nearly 4.5 pounds of trash each day.',
+    'Over the past century, "Michael" has been the most popular male baby name 44 times.',
+    'Americans read for personal interest for 10 minutes or less per day.',
+    'The average American eats nearly 13 pounds of ice cream per year.',
+    'And more than half a million people in America experience homelessness a night.',
+    'We collectively receive about 2.4 billion "robocalls" per month.',
+    'There are more than 6,000 dogs registered to come to work with Amazon employees at the company\'s Seattle office.',
+    'Americans are eating 4.2 billion avocados annually.',
+    'A high school graduate will have taken around 100 mandatory standardized tests since pre-kindergarten.',
+    'Only 3 percent of adults over 65 use Snapchat (Boomers).',
+    'More than a half-billion Instagram accounts are active every day.',
+    'Americans take 1.8 billion trips for leisure annually.',
+    'The odds of an average person dying from contact with hornets, wasps, or bees is one in 63,225.',
+    'President Kennedy was the fastest random speaker in the world with upwards of 350 words per minute.',
+    'In the average lifetime, a person will walk the equivalent of 5 times around the equator.',
+    'According to suicide statistics, Monday is the favored day for self-destruction.',
+    'It is believed that Shakespeare was 46 around the time that the King James Version of the Bible was written. In Psalms 46, the 46th word from the first word is shake and the 46th word from the last word is spear.',
+    'The most money ever paid for a cow in an auction was $1.3 million.',
+    'Every year about 98% of the atoms in your body are replaced.',
+    'The human heart creates enough pressure to squirt blood 30 feet.',
+    'The average person makes upwards of 1825 calls a year.'
 ]
