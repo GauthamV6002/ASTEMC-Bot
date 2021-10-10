@@ -1,3 +1,4 @@
+# FUN FACTS
 funfactList = [
     'Yuma, Arizona gets over 4000 hours of sunshine a year, making it the sunniest place on earth. The least sunny place is the South Pole, where the sun only shines on 182 days a year.',
     'Rain contains vitamin B12. ',
@@ -41,6 +42,7 @@ funfactList = [
     'The Neanderthal\'s brain was bigger than yours is.'
 ]
 
+# RANDOM STATISTICS
 randstats = [
     'The average American generates nearly 4.5 pounds of trash each day.',
     'Over the past century, "Michael" has been the most popular male baby name 44 times.',
@@ -64,3 +66,16 @@ randstats = [
     'The human heart creates enough pressure to squirt blood 30 feet.',
     'The average person makes upwards of 1825 calls a year.'
 ]
+
+#QUIZ QUESIONS
+
+quizQuestions = [
+
+]
+
+quizAnswers = [
+  
+]
+
+
+

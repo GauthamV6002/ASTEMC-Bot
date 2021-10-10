@@ -3,7 +3,7 @@ from discord.ext import commands
 
 CurrentQuizTakerIds = []
 
-def createQuizEmbed(questions, subject):
+def createQuizEmbed(questions):
   quizEmbed = discord.Embed(title='Quiz Time!', 
       color=0x00ff00, 
       description='Take a quick quiz and test your scientific knowledge!')
@@ -14,20 +14,19 @@ def createQuizEmbed(questions, subject):
   quizEmbed.set_footer(text='Answers should be in the form:\n 1. Answer\n 2. Answer...' )
 
   return quizEmbed
+
   
 
-
-
-
-class Quiz(commands.Cog):
+class Quizzes(commands.Cog):
 
   def __init__(self, client):
     self.client = client
 
   @commands.command()
-  async def quiz(self, ctx, questions=3, subject='all'):
+  async def quiz(self, ctx, questions=3):
     
-    await ctx.send(embed=createQuizEmbed(questions, subject))
+    await ctx.send('Functionality Incomplete. Please give 2-3 days for the issue to be resolved.')
+    #await ctx.send(embed=createQuizEmbed(questions))
 
 def setup(client):
-    client.add_cog(Quiz(client))
+    client.add_cog(Quizzes(client))
