@@ -1,4 +1,6 @@
 # FUN FACTS
+# Uses python lists for simplicities sake; databases can be used when there is more information to store :)
+
 funfactList = [
     'Yuma, Arizona gets over 4000 hours of sunshine a year, making it the sunniest place on earth. The least sunny place is the South Pole, where the sun only shines on 182 days a year.',
     'Rain contains vitamin B12. ',
@@ -39,7 +41,8 @@ funfactList = [
     '1 millions Earths could fit inside the Sun!',
     'The Sun is a colossal ball of helium and hydrogen gas and is the heaviest body in our Solar System.',
     'The immensely strong gravity of the Sun keeps objects in the solar system orbiting around it.',
-    'The Neanderthal\'s brain was bigger than yours is.'
+    'The Neanderthal\'s brain was bigger than yours is.',
+    'ASTEMC is awesome! Don\'t you agree?'
 ]
 
 # RANDOM STATISTICS
@@ -96,6 +99,8 @@ quizQuestions = [
     'The 3 subatomic particles include: electrons, neutrons and ________',
 ]
 
+
+#No point looking at these! Unless there's something wrong...
 quizAnswers = [
     'mitochondria',
     'unicellular',
@@ -103,8 +108,8 @@ quizAnswers = [
     'emergent',
     'eukaryotic',
     'vacuoles',
-    'mitosis',
     'meiosis',
+    'mitosis',
     'recessive',
     'dominant',
     'heterozygous',

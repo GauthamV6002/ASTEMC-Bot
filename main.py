@@ -14,6 +14,10 @@ statusLoop = ['%funfact', '%randstat', '%help', '%quiz']
 client.load_extension("Cogs.FactsNStats")
 client.load_extension("Cogs.Quizzes")
 
+@client.event
+async def on_command_error(ctx, error):
+  if isinstance(error, commands.MissingRequiredArgument):
+    await ctx.send("The command you used is missing arguments!")
 
 @client.event
 async def on_ready():

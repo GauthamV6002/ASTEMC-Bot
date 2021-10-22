@@ -1,19 +1,30 @@
 import discord
 from discord.ext import commands
+import random
+import Data
 
-CurrentQuizTakerIds = []
 
-def createQuizEmbed(questions):
+current_quiz_takers = []
+current_quiz_answers = []
+
+
+def createQuizEmbed():
   quizEmbed = discord.Embed(title='Quiz Time!', 
-      color=0x00ff00, 
-      description='Take a quick quiz and test your scientific knowledge!')
+      color=0x00ff00,)
 
-  for i in range(questions):
-    quizEmbed.add_field(name=f'Question {i + 1}', value='temp', inline=False)
+  QAindices = [random.randrange(0, len(Data.quizQuestions)) for i in range(3)]
+  ans_list = []
 
-  quizEmbed.set_footer(text='Seperate answers with a comma, in  \n All answers are ONE WORD, or a single number.')
+  for i in range(3):
+    quizEmbed.add_field(name=f'Question {i + 1}', value=Data.quizQuestions[QAindices[i]], inline=False)
+    ans_list.append(Data.quizAnswers[QAindices[i]])
+
+  current_quiz_answers.append(ans_list)
+  quizEmbed.set_footer(text='Seperate answers with a comma, and use the %ans command to answer.')
 
   return quizEmbed
+
+
 
 class Quizzes(commands.Cog):
 
@@ -22,12 +33,31 @@ class Quizzes(commands.Cog):
 
   @commands.command()
   async def quiz(self, ctx):
-    
-    await ctx.send('Functionality Incomplete. Please give 2-3 days for the issue to be resolved.')
-    #await ctx.send(embed=createQuizEmbed(questions))
+      await ctx.send(embed=createQuizEmbed())
+      current_quiz_takers.append(ctx.message.author)
 
-  # @commands.command()
-  # async def ans(self, ctx, *, )
+  @commands.command()
+  async def ans(self, ctx, *, answers):
+    answers_list = (answers.replace(' ', '').lower()).split(',')
+    
+    if len(answers_list) < 3:
+      await ctx.send('Please answer all the questions!')
+    else:
+      if ctx.message.author in current_quiz_takers:
+        ctxAns = current_quiz_answers[current_quiz_takers.index(ctx.message.author)]
+
+        score = 0
+        for i in range(len(ctxAns)):
+          if ctxAns[i] == answers_list[i]:
+            score += 1
+        
+        current_quiz_answers.pop(current_quiz_takers.index(ctx.message.author))
+        current_quiz_takers.remove(ctx.message.author)
+
+        await ctx.send('You got ' + str(score) + '/3 correct!\nCorrect Answers: ' + str(ctxAns)[1:-1].replace('\'', ''))
+
+      else:
+        await ctx.send("Looks like you aren't taking a quiz! Use %quiz to start one!")
 
 def setup(client):
     client.add_cog(Quizzes(client))
