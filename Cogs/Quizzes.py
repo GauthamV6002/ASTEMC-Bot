@@ -11,11 +11,9 @@ def createQuizEmbed(questions):
   for i in range(questions):
     quizEmbed.add_field(name=f'Question {i + 1}', value='temp', inline=False)
 
-  quizEmbed.set_footer(text='Answers should be in the form:\n 1. Answer\n 2. Answer...' )
+  quizEmbed.set_footer(text='Seperate answers with a comma, in  \n All answers are ONE WORD, or a single number.')
 
   return quizEmbed
-
-  
 
 class Quizzes(commands.Cog):
 
@@ -23,10 +21,13 @@ class Quizzes(commands.Cog):
     self.client = client
 
   @commands.command()
-  async def quiz(self, ctx, questions=3):
+  async def quiz(self, ctx):
     
     await ctx.send('Functionality Incomplete. Please give 2-3 days for the issue to be resolved.')
     #await ctx.send(embed=createQuizEmbed(questions))
+
+  # @commands.command()
+  # async def ans(self, ctx, *, )
 
 def setup(client):
     client.add_cog(Quizzes(client))

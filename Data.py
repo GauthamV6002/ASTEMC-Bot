@@ -70,12 +70,55 @@ randstats = [
 #QUIZ QUESIONS
 
 quizQuestions = [
-
+    'What is the powerhouse of the cell?',
+    'Some organisms have only one cell, while others have many. Which type is the former?',
+    'One product of cellular respiration is carbon dioxide. What is the other?',
+    '_____ properties do NOT appear in an induvidual unit, but show up in a system or species.',
+    'Are prokaryotic or eukaryotic cells\'s DNA bound to protiens? ',
+    '_____ are storage sites in the cells for nutrients and water.',
+    'In this process, gametes slipt up into 4 cells. What is the process called?',
+    'In this process, diploid cells slipt to form identical copies. What is the process called?',
+    'There are two types of alleles. One is dominant, the other is _____.',
+    'There are two types of alleles. One is recessive, the other is _____.',
+    'Consider the allele pair Bb. Is it heterozygous or homozygous?',
+    'Consider the allele pair XX. Is it heterozygous or homozygous?',
+    'Parents of a child have alelles for a gene: BB and bb. What is the chance will have the gene? (Dominant has the gene, recessive doesn\'t.) Write your answer numerically (no % sign)',
+    'In the electrolysis of water, water is a reactant and H2 and O2 are the products. What type of reaction is this?',
+    'Water changes straight from ice to water vapour, never becoming liquid. What change of state is this?',
+    'Water changes from water vapour to liquid water. What change of state is this?',
+    'What state change occurs when a substance reaches its boiling point?',
+    'Which physical property is the quality of being able to be shaped?',
+    'Wood burns. Is the change chemical or physical?',
+    'I write with a pencil on a page. Is the change chemical or physical?',
+    'Copper (II) Sulfate is dissovled in water. Is the change chemical or physical?',
+    'The 3 subatomic particles include: protons, neutrons and ________',
+    'The 3 subatomic particles include: protons, electrons and ________',
+    'The 3 subatomic particles include: electrons, neutrons and ________',
 ]
 
 quizAnswers = [
-  
+    'mitochondria',
+    'unicellular',
+    'water',
+    'emergent',
+    'eukaryotic',
+    'vacuoles',
+    'mitosis',
+    'meiosis',
+    'recessive',
+    'dominant',
+    'heterozygous',
+    'homozygous',
+    '100',
+    'decomposition',
+    'sublimation',
+    'condensation',
+    'evaporation',
+    'malleability',
+    'chemical',
+    'physical',
+    'physical',
+    'electrons',
+    'neutrons',
+    'protons',
 ]
-
-
-

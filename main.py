@@ -1,8 +1,8 @@
 import discord
 from discord.ext import tasks, commands
-
+from keep_alive import keep_alive
 import os
-from itertools import cycle
+#from itertools import cycle
 
 
 client = commands.Bot(command_prefix = "%")
@@ -28,5 +28,6 @@ async def on_ready():
 
 # change_status.start()
 
+keep_alive()
 client.run(TOKEN)
 
