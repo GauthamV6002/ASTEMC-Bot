@@ -1,3 +1,4 @@
+#To keep bot active
 from flask import Flask
 from threading import Thread
 
