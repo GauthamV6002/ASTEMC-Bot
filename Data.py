@@ -97,6 +97,10 @@ quizQuestions = [
     'The 3 subatomic particles include: protons, neutrons and ________',
     'The 3 subatomic particles include: protons, electrons and ________',
     'The 3 subatomic particles include: electrons, neutrons and ________',
+    'The formula for momentum is Force ÷ Acceleration. True or False?',
+    'A car moves at 95.5km/h for 22 minutes. How far does it travel in km? Round to the nearest integer, and do not include units in your answers.',
+    '______ is the change in velocity over time.',
+    'A car\'s acceleration is 2m/s². If it accelerates for 24 seconds starting at 6km/h, find its final velocity in km/h. Round to the nearest integer, and do not include units in your answers.'
 ]
 
 
@@ -126,4 +130,8 @@ quizAnswers = [
     'electrons',
     'neutrons',
     'protons',
+    'false',
+    '35',
+    'acceleration',
+    '179'
 ]

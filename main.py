@@ -17,7 +17,7 @@ client.load_extension("Cogs.Quizzes")
 @client.event
 async def on_command_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send("The command you used is missing arguments!")
+    await ctx.send("The command you used is missing arguments!\n Eg. %ans answer1, answer2, answer3")
 
 @client.event
 async def on_ready():
