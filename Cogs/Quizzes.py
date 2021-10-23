@@ -8,13 +8,13 @@ current_quiz_takers = []
 current_quiz_answers = []
 
 
-def createQuizEmbed(answers, questions):
+def createQuizEmbed(questions):
   quizEmbed = discord.Embed(title='Quiz Time!', 
       color=0x00ff00,)
 
   for i in range(3):
     quizEmbed.add_field(name=f'Question {i + 1}', value = questions[i])
-  quizEmbed.set_footer(text='Seperate answers with a comma, and use the %ans command to answer.')
+  quizEmbed.set_footer(text='Seperate answers with a space, your next message will be recorded as your answer.')
 
   return quizEmbed
 
@@ -36,13 +36,14 @@ class Quizzes(commands.Cog):
 
     await ctx.send(embed=createQuizEmbed(questions))
 
-    def check(m, author):
-      return m.author == ctx.message.author
+    def check(m):
+      return m.author.id == ctx.message.author.id
       
     #Wait for response from command caller for answers
-    message = self.client.wait_for("message", check=check).split()
-    for i in range(len(message)):
-      if message[i] == answers[i]:
+    message = await self.client.wait_for("message", check=check)
+    message_content = message.content.split()
+    for i in range(len(message_content)):
+      if message_content[i] == answers[i]:
         score += 1
 
     await ctx.send('You got ' + str(score) + '/3 correct!\nCorrect Answers: ' + str(answers)[1:-1].replace('\'', '') + '\nConfused about answer or see an error? Dm or mention a director or organizational commitee member!')
