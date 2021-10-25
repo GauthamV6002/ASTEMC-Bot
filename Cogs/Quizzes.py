@@ -13,7 +13,7 @@ def createQuizEmbed(questions):
       color=0x00ff00,)
 
   for i in range(3):
-    quizEmbed.add_field(name=f'Question {i + 1}', value = questions[i])
+    quizEmbed.add_field(name=f'Question {i + 1}', value = questions[i], inline=True)
   quizEmbed.set_footer(text='Seperate answers with a space, your next message will be recorded as your answer.')
 
   return quizEmbed
@@ -41,7 +41,7 @@ class Quizzes(commands.Cog):
       
     #Wait for response from command caller for answers
     message = await self.client.wait_for("message", check=check)
-    message_content = message.content.split()
+    message_content = message.content.replace('%ans', '').replace(',', ' ').split()
     for i in range(len(message_content)):
       if message_content[i] == answers[i]:
         score += 1
