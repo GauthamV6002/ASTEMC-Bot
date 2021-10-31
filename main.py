@@ -2,6 +2,8 @@ import discord
 from discord.ext import tasks, commands
 from keep_alive import keep_alive
 import os
+import datetime
+
 #from itertools import cycle
 
 
@@ -10,9 +12,13 @@ TOKEN = os.environ['TOKEN']
 
 statusLoop = ['%funfact', '%randstat', '%help', '%quiz']
 
+
+
 #COGS
 client.load_extension("Cogs.FactsNStats")
 client.load_extension("Cogs.Quizzes")
+client.load_extension("Cogs.Utilities")
+client.load_extension("Cogs.Miscellaneous")
 
 @client.event
 async def on_command_error(ctx, error):
@@ -27,4 +33,6 @@ async def on_ready():
 
 keep_alive()
 client.run(TOKEN)
+
+
 

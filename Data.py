@@ -1,5 +1,5 @@
 # FUN FACTS
-# Uses python lists for simplicities sake; databases can be used when there is more information to store :)
+# Uses python lists for simplicity's sake; databases can be used when there is more information to store :)
 
 funfactList = [
     'Yuma, Arizona gets over 4000 hours of sunshine a year, making it the sunniest place on earth. The least sunny place is the South Pole, where the sun only shines on 182 days a year.',
@@ -71,7 +71,6 @@ randstats = [
 ]
 
 #QUIZ QUESIONS
-
 quizQuestions = [
     'What is the powerhouse of the cell?',
     'Some organisms have only one cell, while others have many. Which type is the former?',
@@ -102,7 +101,6 @@ quizQuestions = [
     '______ is the change in velocity over time.',
     'A car\'s acceleration is 2m/s². If it accelerates for 24 seconds starting at 6km/h, find its final velocity in km/h. Round to the nearest integer, and do not include units in your answers.'
 ]
-
 
 #No point looking at these! Unless there's something wrong...
 quizAnswers = [
@@ -135,4 +133,5 @@ quizAnswers = [
     'acceleration',
     '179'
 ]
+
 

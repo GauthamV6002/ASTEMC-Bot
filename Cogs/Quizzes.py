@@ -40,12 +40,12 @@ class Quizzes(commands.Cog):
       
     #Wait for response from command caller for answers
     message = await self.client.wait_for("message", check=check)
-    message_content = message.content.lower().replace('%ans', '').replace(',', ' ').split()
+    message_content = message.content.lower().replace('%ans', '').replace(',', '').split()
     for i in range(len(message_content)):
       if message_content[i] == answers[i]:
         score += 1
 
-    ansStr = (str(answers))[1:-1].replace(',', ' ')
+    ansStr = (str(answers))[1:-1].replace(',', ' ').replace('\'', '')
     ansMsg = f'You got {str(score)}/3 correct!\nCorrect Answers: {ansStr} \nConfused about answer or see an error? Dm or mention a director or organizational commitee member!'
 
     await ctx.send(ansMsg)
