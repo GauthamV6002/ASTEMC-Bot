@@ -1,26 +1,17 @@
 import discord
 from discord.ext import commands
-import random
-import Data
+import random, QuestionGen
 
-
-current_quiz_takers = []
 current_quiz_answers = []
 
 
-def createQuizEmbed():
-  quizEmbed = discord.Embed(title='Quiz Time!', 
-      color=0x00ff00,)
-
-  QAindices = [random.randrange(0, len(Data.quizQuestions)) for i in range(3)]
-  ans_list = []
+def createQuizEmbed(questions):
+  quizEmbed = discord.Embed(title='Quiz Time!', color=0x00ff00)
 
   for i in range(3):
-    quizEmbed.add_field(name=f'Question {i + 1}', value=Data.quizQuestions[QAindices[i]], inline=False)
-    ans_list.append(Data.quizAnswers[QAindices[i]])
+    quizEmbed.add_field(name=f'Question {i + 1}', value = questions[i], inline=True)
 
-  current_quiz_answers.append(ans_list)
-  quizEmbed.set_footer(text='Seperate answers with a comma, and use the %ans command to answer.')
+  quizEmbed.set_footer(text='Seperate answers with a space, your next message will be recorded as your answer.')
 
   return quizEmbed
 
@@ -32,32 +23,63 @@ class Quizzes(commands.Cog):
     self.client = client
 
   @commands.command()
-  async def quiz(self, ctx):
-      await ctx.send(embed=createQuizEmbed())
-      current_quiz_takers.append(ctx.message.author)
+  async def quiz(self, ctx, *, subject='None'):
+    #Number of correct answers
+    score = 0
+    questions = []
+    answers = []
 
-  @commands.command()
-  async def ans(self, ctx, *, answers):
-    answers_list = (answers.replace(' ', '').lower()).split(',')
-    
-    if len(answers_list) < 3:
-      await ctx.send('Please answer all the questions!')
+    if(subject.lower() == 'biology'):
+      for i in range(3):
+        QandA = QuestionGen.getBiologyQuestion()
+        questions.append(QandA[0])
+        answers.append(QandA[1])
+    elif(subject.lower() == 'chemistry'):
+      for i in range(3):
+        QandA = QuestionGen.getChemistryQuestion()
+        questions.append(QandA[0])
+        answers.append(QandA[1])
+    elif(subject.lower() == 'physics'):
+      for i in range(3):
+        QandA = QuestionGen.getPhysicsQuestion()
+        questions.append(QandA[0])
+        answers.append(QandA[1])
     else:
-      if ctx.message.author in current_quiz_takers:
-        ctxAns = current_quiz_answers[current_quiz_takers.index(ctx.message.author)]
+        QandA = QuestionGen.getBiologyQuestion()
+        questions.append(QandA[0])
+        answers.append(QandA[1])
 
-        score = 0
-        for i in range(len(ctxAns)):
-          if ctxAns[i] == answers_list[i]:
-            score += 1
-        
-        current_quiz_answers.pop(current_quiz_takers.index(ctx.message.author))
-        current_quiz_takers.remove(ctx.message.author)
+        QandA = QuestionGen.getChemistryQuestion()
+        questions.append(QandA[0])
+        answers.append(QandA[1])
 
-        await ctx.send('You got ' + str(score) + '/3 correct!\nCorrect Answers: ' + str(ctxAns)[1:-1].replace('\'', ''))
+        QandA = QuestionGen.getPhysicsQuestion()
+        questions.append(QandA[0])
+        answers.append(QandA[1])
+    
 
-      else:
-        await ctx.send("Looks like you aren't taking a quiz! Use %quiz to start one!")
+    await ctx.send(embed=createQuizEmbed(questions))
+
+    def check(m):
+      return m.author.id == ctx.message.author.id
+      
+    #Wait for response from command caller for answers
+    message = await self.client.wait_for("message", check=check)
+    message_content = message.content.lower().replace('%ans', '').replace(',', '').split()
+
+    if len(message_content) > len(answers):
+      for i in range(len(answers)):
+        if message_content[i] == answers[i]:
+          score += 1
+    else:
+      for i in range(len(message_content)):
+        if message_content[i] == answers[i]:
+          score += 1
+
+    ansStr = (str(answers))[1:-1].replace(',', ' ').replace('\'', '')
+    ansMsg = f'You got {str(score)}/3 correct!\nCorrect Answers: {ansStr} \nPlease note a beta system for questions is in implementation. Please contact @directors if you see an error!'
+
+    await ctx.send(ansMsg)
 
 def setup(client):
     client.add_cog(Quizzes(client))

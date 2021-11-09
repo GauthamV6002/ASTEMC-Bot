@@ -1,5 +1,5 @@
 # FUN FACTS
-# Uses python lists for simplicities sake; databases can be used when there is more information to store :)
+# Uses python lists for simplicity's sake; databases can be used when there is more information to store :)
 
 funfactList = [
     'Yuma, Arizona gets over 4000 hours of sunshine a year, making it the sunniest place on earth. The least sunny place is the South Pole, where the sun only shines on 182 days a year.',
@@ -71,8 +71,7 @@ randstats = [
 ]
 
 #QUIZ QUESIONS
-
-quizQuestions = [
+bioQuizQuestions = [
     'What is the powerhouse of the cell?',
     'Some organisms have only one cell, while others have many. Which type is the former?',
     'One product of cellular respiration is carbon dioxide. What is the other?',
@@ -85,7 +84,10 @@ quizQuestions = [
     'There are two types of alleles. One is recessive, the other is _____.',
     'Consider the allele pair Bb. Is it heterozygous or homozygous?',
     'Consider the allele pair XX. Is it heterozygous or homozygous?',
-    'Parents of a child have alelles for a gene: BB and bb. What is the chance will have the gene? (Dominant has the gene, recessive doesn\'t.) Write your answer numerically (no % sign)',
+    'Parents of a child have alelles for a gene: BB and bb. What is the chance will have the gene? (Dominant has the gene, recessive doesn\'t.) Write your answer numerically (no % sign)'
+]
+
+chemQuizQuestions = [
     'In the electrolysis of water, water is a reactant and H2 and O2 are the products. What type of reaction is this?',
     'Water changes straight from ice to water vapour, never becoming liquid. What change of state is this?',
     'Water changes from water vapour to liquid water. What change of state is this?',
@@ -99,9 +101,15 @@ quizQuestions = [
     'The 3 subatomic particles include: electrons, neutrons and ________',
 ]
 
+physicsQuizQuestions = [
+  'The formula for momentum is Force ÷ Acceleration. True or False?',
+  'A car moves at 95.5km/h for 22 minutes. How far does it travel in km? Round to the nearest integer, and do not include units in your answers.',
+  '______ is the change in velocity over time.',
+  'A car\'s acceleration is 2m/s². If it accelerates for 24 seconds starting at 6km/h, find its final velocity in km/h. Round to the nearest integer, and do not include units in your answers.'
+]
 
 #No point looking at these! Unless there's something wrong...
-quizAnswers = [
+bioQuizAnswers = [
     'mitochondria',
     'unicellular',
     'water',
@@ -114,7 +122,10 @@ quizAnswers = [
     'dominant',
     'heterozygous',
     'homozygous',
-    '100',
+    '100'
+]
+
+chemQuizAnswers = [
     'decomposition',
     'sublimation',
     'condensation',
@@ -127,3 +138,11 @@ quizAnswers = [
     'neutrons',
     'protons',
 ]
+
+physicsQuizAnswers = [
+    'false',
+    '35',
+    'acceleration',
+    '179'
+]
+
